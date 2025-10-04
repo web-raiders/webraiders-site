@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { GlobalStyle, Screen, Basics } from 'styles';
@@ -45,21 +45,29 @@ const BodyText = styled.h2`
   color: ${({ theme }) => theme.logo};
 `;
 
-const App = ({ theme, toggleTheme }: any) => (
+const App = ({ toggleTheme }: any) => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  return (
     <PageContainer>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>404</title>
+        <title>404 - Web Raiders Studio</title>
       </Helmet>
       <GlobalStyle />
+      <Nav
+        toggleTheme={toggleTheme}
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
+      />
       <LogoContainer>
         <Logo />
       </LogoContainer>
       <BodyText>
         404
       </BodyText>
-      <Nav theme={theme} toggleTheme={toggleTheme}/>
     </PageContainer>
-);
+  );
+};
 
 export default App;

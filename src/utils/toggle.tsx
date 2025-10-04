@@ -20,32 +20,40 @@ export default Toggle;
  * styles
  */
 const BrightnessContainer = styled.button`
-  position: fixed;
+  position: relative;
   border: none;
   background-color: transparent;
   outline: none;
-  margin-top: 10px;
-  right: 50px;
-  bottom: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color}15;
+    transform: rotate(15deg);
+  }
+
   svg {
     fill: ${({ theme }) => theme.button};
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    transition: all 0.25s ease;
     ${Screen.miniTablet`
-      width: 25px;
-      height: 25px;
+      width: 18px;
+      height: 18px;
+    `};
+    ${Screen.largePhone`
+      width: 16px;
+      height: 16px;
     `};
   }
-  ${Screen.pad`
-    right: 100px;
-    margin-top: 20px;
-  `};
-  ${Screen.miniTablet`
-    right: 25px;
-    margin-top: 10px;
-  `};
 
-  &:focus{
-    outline: none;
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.button}40;
+    outline-offset: 2px;
   }
 `;

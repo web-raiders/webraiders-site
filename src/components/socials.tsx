@@ -7,14 +7,16 @@ import { links } from 'config';
 const SocialContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin-top: 20px;
   padding-bottom: 30px;
+  gap: 24px;
 `;
 
 const Item = styled.div`
   position: relative;
-  margin-right: 24px;
   &:hover,
   &:focus {
     transform: translateY(-5px);
