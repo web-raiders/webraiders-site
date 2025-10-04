@@ -1,38 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { GlobalStyle, Screen } from 'styles';
+import { GlobalStyle } from 'styles';
 import {
   Nav,
   Hero,
+  About,
+  Contact,
 } from 'components';
 
 const AppContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 10px 180px 30px 200px;
-  ${Screen.tablet`
-    margin: 10px 80px 100px 80px;
-  `};
-  ${Screen.miniTablet`
-    margin: 10px 50px 100px 50px;
-  `};
-  ${Screen.largePhone`
-    margin: 30px 10px 30px 10px;
-  `};
+  min-height: 100vh;
 `;
 
-const App = ({ theme, toggleTheme }: any) => (
-      <AppContainer>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>Web Raiders Studio</title>
-        </Helmet>
-        <GlobalStyle />
-        <Hero />
-        <Nav theme={theme} toggleTheme={toggleTheme}/>
-      </AppContainer>
-);
+const Content = styled.div`
+  flex: 1;
+`;
+
+const App = ({ toggleTheme }: any) => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case 'about':
+        return <About />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Hero />;
+    }
+  };
+
+  return (
+    <AppContainer>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Web Raiders Studio - {activeSection === 'home' ? 'Exceptional Digital Experiences' : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</title>
+        <meta name="description" content="Web Raiders Studio builds innovative web and mobile solutions that drive growth and elevate brands. Expert software engineering consulting and digital sales expertise." />
+      </Helmet>
+      <GlobalStyle />
+      <Nav
+        toggleTheme={toggleTheme}
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
+      />
+      <Content>
+        {renderContent()}
+      </Content>
+    </AppContainer>
+  );
+};
 
 export default App;
