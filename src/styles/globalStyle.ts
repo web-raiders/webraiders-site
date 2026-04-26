@@ -32,17 +32,29 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }: ITheme) => theme.body};
     font-family: ${Basics.fonts.RadioCanada};
+    font-size: 16px;
+    line-height: 1.6;
   }
-  
+
   h1 {
-    font-family: ${Basics.fonts.RadioCanada};
+    font-family: ${Basics.fonts.Montserrat};
     color: ${({ theme }) => theme.color};
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   h2 {
-    font-family: ${Basics.fonts.RadioCanada};
+    font-family: ${Basics.fonts.Montserrat};
     font-weight: 600;
     color: ${({ theme }) => theme.subtitle};
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: ${Basics.fonts.Montserrat};
+    color: ${({ theme }) => theme.color};
+    letter-spacing: -0.01em;
   }
 
   code {
@@ -73,7 +85,8 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: ${Basics.fonts.RadioCanada};
     color: ${({ theme }) => theme.color};
-    word-spacing: 2px;
+    word-spacing: 1px;
+    line-height: 1.75;
   }
 
   ol { 

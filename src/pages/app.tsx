@@ -6,6 +6,7 @@ import {
   Nav,
   Hero,
   About,
+  Work,
   Contact,
 } from 'components';
 
@@ -27,10 +28,12 @@ const App = ({ toggleTheme }: any) => {
     switch (activeSection) {
       case 'about':
         return <About />;
+      case 'work':
+        return <Work />;
       case 'contact':
         return <Contact />;
       default:
-        return <Hero />;
+        return <Hero onNavigate={setActiveSection} />;
     }
   };
 

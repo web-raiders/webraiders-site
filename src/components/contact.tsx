@@ -25,16 +25,17 @@ const SectionTitle = styled.h1`
     font-size: ${Basics.fontSize.large};
   `};
   ${Screen.largePhone`
-    font-size: 36px;
+    font-size: 32px;
   `};
 `;
 
 const ContactText = styled.p`
-  font-size: ${Basics.fontSize.small};
+  font-size: 18px;
   line-height: 1.8;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   color: ${({ theme }) => theme.text};
   text-align: center;
+  opacity: 0.85;
 `;
 
 const ContactButton = styled.a`
@@ -42,42 +43,46 @@ const ContactButton = styled.a`
   background-color: ${({ theme }) => theme.button};
   color: ${Basics.colors.white};
   text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: ${Basics.fontSize.small};
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 600;
+  font-family: ${Basics.fonts.Montserrat};
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   text-align: center;
-  transition: ${Basics.transition};
+  transition: all 0.3s ease;
   margin: 10px auto;
-  max-width: 200px;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px ${({ theme }) => theme.button}40;
+    box-shadow: 0 12px 30px ${({ theme }) => theme.button}35;
   }
 
   ${Screen.largePhone`
-    padding: 12px 24px;
-    font-size: ${Basics.fontSize.xsmall};
+    padding: 12px 28px;
+    font-size: 12px;
   `};
 `;
 
 const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 12px;
+  margin-top: 36px;
   align-items: center;
 `;
 
 const ContactLink = styled.a`
   color: ${({ theme }) => theme.link};
   text-decoration: none;
-  font-size: ${Basics.fontSize.small};
-  transition: ${Basics.transition};
+  font-size: 14px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
 
   &:hover {
     color: ${({ theme }) => theme.button};
+    opacity: 1;
   }
 `;
 

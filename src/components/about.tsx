@@ -17,7 +17,7 @@ const AboutContainer = styled.div`
 
 const SectionTitle = styled.h1`
   font-size: ${Basics.fontSize.xlarge};
-  margin: 0 0 30px 0;
+  margin: 0 0 40px 0;
   color: ${({ theme }) => theme.color};
   font-weight: 700;
   text-align: center;
@@ -25,15 +25,16 @@ const SectionTitle = styled.h1`
     font-size: ${Basics.fontSize.large};
   `};
   ${Screen.largePhone`
-    font-size: 36px;
+    font-size: 32px;
   `};
 `;
 
 const AboutText = styled.p`
-  font-size: ${Basics.fontSize.small};
-  line-height: 1.8;
-  margin-bottom: 25px;
+  font-size: 17px;
+  line-height: 1.85;
+  margin-bottom: 28px;
   color: ${({ theme }) => theme.text};
+  opacity: 0.9;
 
   &:last-child {
     margin-bottom: 0;
@@ -52,13 +53,15 @@ const TeamSection = styled.div`
 `;
 
 const TeamTitle = styled.h2`
-  font-size: ${Basics.fontSize.medium};
+  font-size: 13px;
   margin-bottom: 40px;
-  color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.subtitle};
   text-align: center;
   font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   ${Screen.largePhone`
-    font-size: ${Basics.fontSize.small};
+    font-size: 11px;
     margin-bottom: 30px;
   `};
 `;
@@ -106,22 +109,24 @@ const ProfileImage = styled.div<{ src?: string }>`
 `;
 
 const MemberName = styled.h3`
-  font-size: ${Basics.fontSize.small};
-  margin: 0 0 8px 0;
+  font-size: 15px;
+  margin: 0 0 6px 0;
   color: ${({ theme }) => theme.color};
   font-weight: 600;
   ${Screen.largePhone`
-    font-size: ${Basics.fontSize.xsmall};
+    font-size: 13px;
   `};
 `;
 
 const MemberRole = styled.p`
-  font-size: ${Basics.fontSize.xsmall};
+  font-size: 12px;
   margin: 0;
   color: ${({ theme }) => theme.text};
   font-weight: 400;
+  opacity: 0.7;
+  letter-spacing: 0.02em;
   ${Screen.largePhone`
-    font-size: ${Basics.fontSize.xxsmall};
+    font-size: 11px;
   `};
 `;
 

@@ -29,7 +29,7 @@ const basics = {
     nightShift: '#D1D1C0',
     chocolate: '#9e4e15',
   },
-  transition: 'all 0.25s cubic-bezier(0.3, 0.3, 0.3, 0.3)',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   fonts: {
     Montserrat: "'Montserrat', sans-serif",
     RadioCanada: "'Radio Canada', sans-serif",
@@ -37,13 +37,13 @@ const basics = {
     RobotoFlex: "'Roboto Flex', sans-serif",
   },
   fontSize: {
-    large: '40px',
-    xlarge: '85px',
+    large: '44px',
+    xlarge: '72px',
     xxlarge: '100px',
-    small: '15px',
-    xsmall: '12px',
-    xxsmall: '10px',
-    medium: '20px',
+    small: '16px',
+    xsmall: '13px',
+    xxsmall: '11px',
+    medium: '22px',
   },
 };
 

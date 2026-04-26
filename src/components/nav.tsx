@@ -11,42 +11,44 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-  background-color: ${({ theme }) => theme.body};
-  border-bottom: 1px solid ${({ theme }) => theme.color}15;
-  backdrop-filter: blur(10px);
+  padding: 18px 0;
+  background-color: ${({ theme }) => theme.body}ee;
+  backdrop-filter: blur(12px);
   z-index: 1000;
-  transition: ${Basics.transition};
+  transition: all 0.3s ease;
 `;
 
 const NavContent = styled.div`
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 8px;
   ${Screen.largePhone`
-    gap: 20px;
+    gap: 4px;
   `};
 `;
 
 const NavLink = styled.button<{ active?: boolean }>`
   background: none;
   border: none;
-  font-size: ${Basics.fontSize.small};
+  font-size: 13px;
+  font-family: ${Basics.fonts.Montserrat};
   color: ${({ theme, active }) => active ? theme.link : theme.text};
   cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: ${Basics.transition};
-  font-weight: ${({ active }) => active ? '600' : '400'};
+  padding: 8px 20px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: ${({ active }) => active ? '600' : '500'};
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 
   &:hover {
     color: ${({ theme }) => theme.link};
-    background-color: ${({ theme }) => theme.color}10;
+    background-color: ${({ theme }) => theme.color}08;
   }
 
   ${Screen.largePhone`
-    font-size: ${Basics.fontSize.xsmall};
-    padding: 6px 12px;
+    font-size: 11px;
+    padding: 6px 14px;
   `};
 `;
 
@@ -77,6 +79,12 @@ const Nav = ({ toggleTheme, activeSection, onSectionChange }: NavProps) => (
               onClick={() => onSectionChange('about')}
             >
               About
+            </NavLink>
+            <NavLink
+              active={activeSection === 'work'}
+              onClick={() => onSectionChange('work')}
+            >
+              Work
             </NavLink>
             <NavLink
               active={activeSection === 'contact'}

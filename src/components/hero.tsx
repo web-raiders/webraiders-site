@@ -12,59 +12,65 @@ const HeroContainer = styled.div`
   text-align: center;
   min-height: 80vh;
   justify-content: center;
-  padding: 100px 40px 60px;
+  padding: 60px 40px 60px;
   margin-top: 60px;
   ${Screen.largePhone`
-    padding: 80px 20px 40px;
+    padding: 40px 20px 40px;
     margin-top: 60px;
   `};
 `;
 
 const LogoContainer = styled.div`
-  margin-bottom: 40px;
-  width: 120px;
-  height: 120px;
+  margin-bottom: 10px;
+  width: 520px;
+  height: 180px;
   content: url(${({ theme }) => theme.loader});
+  object-fit: contain;
   ${Screen.miniTablet`
-    width: 80px;
-    height: 80px;
+    width: 360px;
+    height: 130px;
     margin-bottom: 30px;
   `};
 `;
 
 const Title = styled.h1`
   font-size: ${Basics.fontSize.xlarge};
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   color: ${({ theme }) => theme.color};
   font-weight: 700;
+  letter-spacing: -0.03em;
   ${Screen.largeScreen`
     font-size: ${Basics.fontSize.large};
   `};
   ${Screen.largePhone`
-    font-size: 36px;
+    font-size: 32px;
   `};
 `;
 
 const SubTitle = styled.h2`
-  margin: 0 0 30px 0;
+  margin: 0 0 24px 0;
   font-size: ${Basics.fontSize.medium};
   color: ${({ theme }) => theme.subtitle};
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 14px;
   ${Screen.largePhone`
-    font-size: ${Basics.fontSize.small};
+    font-size: 12px;
   `};
 `;
 
 const HeroText = styled.p`
-  font-size: ${Basics.fontSize.small};
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.75;
   color: ${({ theme }) => theme.text};
-  max-width: 600px;
-  margin: 0 auto 40px;
+  max-width: 560px;
+  margin: 0 auto 44px;
   font-weight: 400;
+  opacity: 0.85;
   ${Screen.largePhone`
-    font-size: ${Basics.fontSize.xsmall};
-    margin-bottom: 30px;
+    font-size: ${Basics.fontSize.small};
+    margin-bottom: 32px;
   `};
 `;
 
@@ -84,20 +90,23 @@ const PrimaryButton = styled.a`
   background-color: ${({ theme }) => theme.button};
   color: ${Basics.colors.white};
   text-decoration: none;
-  padding: 16px 32px;
-  border-radius: 30px;
-  font-size: ${Basics.fontSize.small};
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 600;
-  transition: ${Basics.transition};
+  font-family: ${Basics.fonts.Montserrat};
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px ${({ theme }) => theme.button}40;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px ${({ theme }) => theme.button}35;
   }
 
   ${Screen.largePhone`
-    padding: 14px 28px;
-    font-size: ${Basics.fontSize.xsmall};
+    padding: 12px 28px;
+    font-size: 12px;
   `};
 `;
 
@@ -106,26 +115,33 @@ const SecondaryButton = styled.a`
   background-color: transparent;
   color: ${({ theme }) => theme.link};
   text-decoration: none;
-  padding: 16px 32px;
-  border: 2px solid ${({ theme }) => theme.link};
-  border-radius: 30px;
-  font-size: ${Basics.fontSize.small};
+  padding: 14px 36px;
+  border: 1.5px solid ${({ theme }) => theme.link}50;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 600;
-  transition: ${Basics.transition};
+  font-family: ${Basics.fonts.Montserrat};
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.link};
-    color: ${({ theme }) => theme.body};
-    transform: translateY(-3px);
+    border-color: ${({ theme }) => theme.link};
+    background-color: ${({ theme }) => theme.link}10;
+    transform: translateY(-2px);
   }
 
   ${Screen.largePhone`
-    padding: 14px 28px;
-    font-size: ${Basics.fontSize.xsmall};
+    padding: 12px 28px;
+    font-size: 12px;
   `};
 `;
 
-const Hero = () => (
+interface HeroProps {
+  onNavigate?: (section: string) => void;
+}
+
+const Hero = ({ onNavigate }: HeroProps) => (
   <HeroContainer>
     <LogoContainer />
     <Title>Web Raiders Studio</Title>
@@ -139,7 +155,7 @@ const Hero = () => (
       <PrimaryButton href="mailto:info@webraiders.studio">
         Start Your Project
       </PrimaryButton>
-      <SecondaryButton href="https://webraiders.notion.site/Our-Works-1203def1dca8809680feeb1a602f4ac1" target="_blank" rel="noopener noreferrer">
+      <SecondaryButton as="button" onClick={() => onNavigate?.('work')}>
         View Our Work
       </SecondaryButton>
     </CTAContainer>

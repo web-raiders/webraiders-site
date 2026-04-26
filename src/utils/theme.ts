@@ -1,5 +1,5 @@
 import { Basics } from 'styles';
-import Loader from 'images/wrloader.gif';
+import Logo from 'images/webraiderslogo.png';
 import { ITheme } from 'types';
 
 export const lightTheme: ITheme['theme'] = {
@@ -10,7 +10,7 @@ export const lightTheme: ITheme['theme'] = {
   link: Basics.colors.chocolate,
   text: '#363537',
   button: Basics.colors.citrus,
-  loader: Loader,
+  loader: Logo,
 };
 
 export const darkTheme: ITheme['theme'] = {
@@ -21,5 +21,5 @@ export const darkTheme: ITheme['theme'] = {
   link: Basics.colors.citrus,
   text: '#FAFAFA',
   button: Basics.colors.citrus,
-  loader: Loader,
+  loader: Logo,
 };
