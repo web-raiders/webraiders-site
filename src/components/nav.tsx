@@ -3,27 +3,30 @@ import styled from 'styled-components';
 import { Screen, Basics } from 'styles';
 import { Toggle } from 'utils';
 
-const NavContainer = styled.div`
+const NavWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 18px 0;
-  background-color: ${({ theme }) => theme.body}ee;
-  backdrop-filter: blur(12px);
+  padding: 28px 20px;
   z-index: 1000;
-  transition: all 0.3s ease;
+  pointer-events: none;
 `;
 
-const NavContent = styled.div`
+const NavContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  padding: 10px 8px;
+  border: 1px solid ${({ theme }) => theme.color}18;
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.body}ee;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  pointer-events: auto;
   ${Screen.largePhone`
-    gap: 4px;
+    padding: 8px 6px;
   `};
 `;
 
@@ -53,9 +56,9 @@ const NavLink = styled.button<{ active?: boolean }>`
 `;
 
 const ThemeToggleContainer = styled.div`
-  margin-left: 20px;
+  margin-left: 12px;
   ${Screen.largePhone`
-    margin-left: 10px;
+    margin-left: 6px;
   `};
 `;
 
@@ -66,8 +69,8 @@ interface NavProps {
 }
 
 const Nav = ({ toggleTheme, activeSection, onSectionChange }: NavProps) => (
-    <NavContainer>
-        <NavContent>
+    <NavWrapper>
+        <NavContainer>
             <NavLink
               active={activeSection === 'home'}
               onClick={() => onSectionChange('home')}
@@ -95,8 +98,8 @@ const Nav = ({ toggleTheme, activeSection, onSectionChange }: NavProps) => (
             <ThemeToggleContainer>
                 <Toggle toggleTheme={toggleTheme} />
             </ThemeToggleContainer>
-        </NavContent>
-    </NavContainer>
+        </NavContainer>
+    </NavWrapper>
 );
 
 export default Nav;

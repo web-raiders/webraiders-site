@@ -2,7 +2,7 @@ const links = {
   socials: [
     {
       name: 'Mail',
-      url: 'mailto:info@webraiders.co',
+      url: 'mailto:webraidersng@gmail.com',
     },
     {
       name: 'Github',
