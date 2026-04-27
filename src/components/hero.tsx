@@ -22,11 +22,6 @@ const float3 = keyframes`
   50% { transform: translate(35px, 35px) scale(1.08); }
 `;
 
-const gradientShift = keyframes`
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.6; }
-`;
-
 const BackgroundShapes = styled.div`
   position: absolute;
   inset: 0;
@@ -315,34 +310,6 @@ const PrimaryButton = styled.a`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px ${({ theme }) => theme.button}35;
-  }
-
-  ${Screen.largePhone`
-    padding: 12px 28px;
-    font-size: 12px;
-  `};
-`;
-
-const SecondaryButton = styled.a`
-  display: inline-block;
-  background-color: transparent;
-  color: ${({ theme }) => theme.link};
-  text-decoration: none;
-  padding: 14px 36px;
-  border: 1.5px solid ${({ theme }) => theme.link}50;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: ${Basics.fonts.Montserrat};
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.link};
-    background-color: ${({ theme }) => theme.link}10;
-    transform: translateY(-2px);
   }
 
   ${Screen.largePhone`
