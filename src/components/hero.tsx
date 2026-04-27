@@ -91,6 +91,7 @@ const HeroInner = styled.div`
 `;
 
 const LogoContainer = styled.div`
+  margin-top: 60px;
   margin-bottom: 10px;
   width: 520px;
   height: 180px;
